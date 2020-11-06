@@ -1,26 +1,35 @@
-var hour;
-var minute;
-var second;
+var hr;
+var mn;
+var sc;
 var sAngle, mAngle, hAngle;
 var sArc,mArc,hArc;
 
 function setup() {
   createCanvas(1600,1600);
-  hour = hour();
-  minute = minute();
-  second = second();
-  hour = hour-12;
+ 
 
 }
 
 function draw() {
   background(255,255,255); 
+  hr = hour();
+  mn = minute();
+  sc = second();
+
   angleMode(DEGREES);
-  sAngle = map(second,0,60,0,360);
-  mAngle = map(minute,0,60,0,360);
-  hAngle = map(hour,0,24,0,360);
+  sAngle = map(sc,0,60,0,360);
+  mAngle = map(mn,0,60,0,360);
+  hAngle = map(hr%12,0,24,0,360);
 
   ellipseMode(CENTER);
+  
+  //for seconds
+  push();
+  rotate(sAngle); //rotate the hand based on angle calculated
+  stroke(255,0,0);
+  strokeWeight(7);
+  line(0,0,100,0);
+  pop();
   
   push();
   stroke("red");
