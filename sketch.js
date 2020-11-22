@@ -32,6 +32,20 @@ function draw() {
   pop();
   
   push();
+  rotate(sAngle); //rotate the hand based on angle calculated
+  stroke(0,0,255);
+  strokeWeight(6);
+  line(0,0,100,0);
+  pop();
+  
+   push();
+  rotate(sAngle); //rotate the hand based on angle calculated
+  stroke(0,0,255);
+  strokeWeight(5);
+  line(0,0,100,0);
+  pop();
+  
+  push();
   stroke("red");
   strokeWeight(6);
   noFill();
